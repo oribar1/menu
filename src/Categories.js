@@ -1,7 +1,22 @@
-import React from 'react';
+import React from 'react'
 
-const Categories = () => {
-  return <h2>categories component</h2>;
-};
+const Categories = ({ cate, filter }) => {
+  return (
+    <div className='btn-container'>
+      {cate.map((cat, index) => {
+        return (
+          <button
+            type='button'
+            className='filter-btn'
+            key={index}
+            onClick={() => filter(cat)}
+          >
+            {cat}
+          </button>
+        )
+      })}
+    </div>
+  )
+}
 
-export default Categories;
+export default Categories
